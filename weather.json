@@ -1,0 +1,153 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Weather API",
+        "description": "A sample API that uses a Mashape weather API as an example to demonstrate Swagger 2.0 features.",
+        "contact": {
+            "name": "Patti DeStefano",
+            "email": "pdestefano@ebsco.com"
+        }
+    },
+    "host": "simple-weather.p.mashape.com",
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/aqi": {
+            "get": {
+                "tags": [
+                    "Air Quality Information"
+                ],
+                "description": "Gets the Air Quality Index",
+                "operationId": "getAqi",
+                "produces": [
+                    "text"
+                ],
+                "parameters": [
+                    {
+                        "name": "lat",
+                        "in": "query",
+                        "description": "Latitude",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "lng",
+                        "in": "query",
+                        "description": "Longitude",
+                        "required": false,
+                        "type": "string"
+                    },
+                   {
+                    "name": "X-Mashape-Key",
+                    "in": "header",
+                    "description": "User Key Authentication Parameter",
+                    "required": true,
+                    "type": "string"
+                  }                 
+                ],
+                "responses": {
+                    "200": {
+                        "description": "AQI response"
+                    },
+                    "default": {
+                        "description": "unexpected error"
+                    }
+                }
+            }
+        },
+        "/weather": {
+            "get": {
+                "tags": [
+                    "Weather Forecast"
+                ],
+                "description": "Gets the Weather Forecast in Short Label",
+                "operationId": "getWeather",
+                "produces": [
+                    "text"
+                ],
+                "parameters": [
+                    {
+                        "name": "lat",
+                        "in": "query",
+                        "description": "Latitude",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "lng",
+                        "in": "query",
+                        "description": "Longitude",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                    "name": "X-Mashape-Key",
+                    "in": "header",
+                    "description": "User Key Authentication Parameter",
+                    "required": true,
+                    "type": "string"
+                    }            
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Weather Response"
+                    },
+                    "default": {
+                        "description": "unexpected error"
+                    }
+                }
+            }
+        },
+        "/weatherdata": {
+            "get": {
+                "tags": [
+                    "Full Weather Data"
+                ],
+                "description": "Get the Weather Forecast by Latitude and Longitude",
+                "operationId": "getWeatherData",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "lat",
+                        "in": "query",
+                        "description": "Latitude",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "lng",
+                        "in": "query",
+                        "description": "Longitude",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                    "name": "X-Mashape-Key",
+                    "in": "header",
+                    "description": "User Key Authentication Parameter",
+                    "required": true,
+                    "type": "string"
+                  }                   
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Weather Data Response"
+                    },
+                    "default": {
+                        "description": "unexpected error"
+                    }
+                }
+            }
+        }
+    }
+}
