@@ -2,7 +2,7 @@
     "swagger": "2.0",
     "info": {
         "version": "1.0.0",
-        "title": "Weather v2 API",
+        "title": "Weather v3 API",
         "description": "A sample API that uses a Mashape weather API as an example to demonstrate Swagger 2.0 features.",
         "contact": {
             "name": "Patti DeStefano",
